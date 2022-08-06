@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ThemeBugSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ThemeBugSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
