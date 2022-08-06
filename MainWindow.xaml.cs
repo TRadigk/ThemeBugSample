@@ -19,7 +19,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 
 using System.Runtime.InteropServices; // For DllImport
-using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
+using WinRT;
+using WinUIEx; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -29,7 +30,7 @@ namespace ThemeBugSample
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : Window, INotifyPropertyChanged
+    public sealed partial class MainWindow : WindowEx, INotifyPropertyChanged
     {
         WindowsSystemDispatcherQueueHelper m_wsdqHelper; // See separate sample below for implementation
         Microsoft.UI.Composition.SystemBackdrops.MicaController m_micaController;
@@ -63,7 +64,7 @@ namespace ThemeBugSample
                                      _ => throw new ArgumentOutOfRangeException()
                                  };
 
-            Debug.WriteLine($"Setting the to: {newTheme}");
+            Debug.WriteLine($"Setting theme to: {newTheme}");
             WindowElementTheme = newTheme;
         }
 
